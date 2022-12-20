@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "git:update": "git add . && git commit -m [WIP] && git push",
+    "git:build": "tsc && vite build && git add . && git commit -m [WIP] && git push"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.47.0",
