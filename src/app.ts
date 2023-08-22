@@ -28,7 +28,7 @@ const todoListDiv = document.getElementById('addTodoListDiv') as HTMLElement;
 
 const login = new Login();
 let logoutBtnEventConnected = false; // Event listener is niet gekoppeld aan de log out button
-const snapshotListeners: Unsubscribe[] = []; // Store your snapshot listener references here
+const snapshotListeners: Unsubscribe[] = [];
 
 // Toon Todo List
 export function showTodoList() {
@@ -125,14 +125,13 @@ const addTodoListFirebase = async (title: string) => {
 
 // User logged in of niet
 onAuthStateChanged(auth, async (user) => {
-  snapshotListeners.forEach((listener) => listener()); // Call the listener to unsubscribe
+  snapshotListeners.forEach((listener) => listener());
 
   if (user) {
     const currentUser = user.uid;
     console.log('Jouw user ID: ', currentUser);
     const userLists = query(collection(fireStoreDb, 'lists'), where('loggedInUserID', '==', currentUser));
 
-    // Attach new snapshot listeners
     const userListsListener = onSnapshot(userLists, (snapshot) => {
       snapshot.docChanges().forEach(async (change) => {
         if (change.type === 'added') {
@@ -159,7 +158,7 @@ onAuthStateChanged(auth, async (user) => {
     // Als user is ingelogd, toon de todo list
     showTodoList();
     logOut();
-    snapshotListeners.push(userListsListener); // Store the listener reference
+    snapshotListeners.push(userListsListener);
   } else {
     // Als user niet is ingelogd, toon login
     root.innerHTML = '';

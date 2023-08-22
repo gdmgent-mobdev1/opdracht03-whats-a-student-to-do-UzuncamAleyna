@@ -70,7 +70,6 @@ export default class TodoList {
     this.render();
   }
 
-  // Inside your TodoList class
   startTimer() {
     if (!this.timerRunning) {
       this.startTime = Date.now() - this.currentTime; // 0 seconden
@@ -109,7 +108,6 @@ export default class TodoList {
     }
   }
 
-  // Here we initialize the saved timer value and update the timer display. Initialize means that we set the timer to the value that was saved in the database.
   async initialiseTimer() {
     try {
       const todoListDoc = doc(fireStoreDb, 'lists', this.id);
