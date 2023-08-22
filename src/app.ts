@@ -45,7 +45,7 @@ function hideTodoList() {
 function logOut() {
   if (!logoutBtnEventConnected) {
     const logoutButton = document.getElementById('logout_button') as HTMLInputElement;
-    logoutButton.addEventListener('click', (e) => {
+    logoutButton.addEventListener('click', () => {
       signOut(auth)
         .then(() => {
           console.log('Gebruiker is uitgelogd');
@@ -68,7 +68,7 @@ document.addEventListener('click', (event) => {
     root.innerHTML = '';
     // Register component wordt geimporteerd en gerenderd
     import('./Components/Register').then(({ default: Register }) => {
-      const register = new Register();
+      new Register();
     });
   }
 });
