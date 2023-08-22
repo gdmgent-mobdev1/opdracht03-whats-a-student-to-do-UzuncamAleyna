@@ -1,0 +1,32 @@
+{
+  "name": "opdracht03-whats-a-student-to-do-uzuncamaleyna",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "git:update": "git add . && git commit -m [WIP] && git push",
+    "git:build": "tsc && vite build && git add . && git commit -m [WIP] && git push"
+  },
+  "devDependencies": {
+    "@types/uuid": "^9.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "eslint": "^8.47.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "eslint-config-standard-with-typescript": "^37.0.0",
+    "eslint-plugin-import": "^2.28.0",
+    "eslint-plugin-n": "^16.0.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "typescript": "^4.9.4",
+    "vite": "^4.0.0"
+  },
+  "dependencies": {
+    "@types/firebase": "^3.2.1",
+    "firebase": "^9.15.0",
+    "uuid": "^9.0.0"
+  }
+}
